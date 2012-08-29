@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">VehicleLogBook</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Vehicle Log Book</string>
+    <string name="menu_New_Tour">New Tour</string>
+    <string name="menu_Backup">Count Tours</string>
+    <string name="menu_Exit">Exit</string>
+    <string name="TourID">&lt;TourID></string>
+    <string name="Source">&lt;Source></string>
+    <string name="Destination">&lt;Dest></string>
+    <string name="Distance">&lt;km></string>
+    <string name="VehicleNo">&lt;Vehicle No&gt;</string>
+    <string name="menu_Reload">Reload</string>
+
+</resources>

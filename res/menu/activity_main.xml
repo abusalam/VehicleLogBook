@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_New_Tour"
+        android:icon="@drawable/ic_menu_new_tour"
+        android:orderInCategory="100"
+        android:title="@string/menu_New_Tour" android:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/menu_Backup"
+        android:orderInCategory="200"
+        android:title="@string/menu_Backup" android:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/menu_Reload"
+        android:icon="@drawable/ic_menu_reload"
+        android:orderInCategory="250" android:title="@string/menu_Reload" android:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/menu_Settings"
+        android:orderInCategory="300"
+        android:showAsAction="never"
+        android:title="@string/menu_settings">
+    </item>
+    <item
+        android:id="@+id/menu_Exit"
+        android:orderInCategory="400"
+        android:title="@string/menu_Exit" android:showAsAction="never">
+    </item>
+
+</menu>
