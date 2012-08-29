@@ -13,5 +13,7 @@
     <string name="Distance">&lt;km></string>
     <string name="VehicleNo">&lt;Vehicle No&gt;</string>
     <string name="menu_Reload">Reload</string>
+    <string name="addTourButtonOk">Add Tour</string>
+    <string name="addTourDialogTitle">Add New Tour</string>
 
 </resources>

@@ -3,10 +3,15 @@ package com.github.abusalam.vehiclelogbook;
 import java.util.List;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
@@ -53,11 +58,37 @@ public class VehicleLogBook extends Activity {
 
 		switch (item.getItemId()) {
 		case R.id.menu_New_Tour:
-			Toast.makeText(
-					this,
-					"Added New TourID "
-							+ db.addTours(new Tour("VehicleNo-1234", "Quarter",
-									"Office", 6)), Toast.LENGTH_SHORT).show();
+			LayoutInflater li = LayoutInflater.from(this);
+			View promptsView = li.inflate(R.layout.add_tour_dialog, null);
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+					this);
+			alertDialogBuilder.setView(promptsView);
+			// final EditText userInput = (EditText) promptsView
+			// .findViewById(R.id.editTextSource);
+			alertDialogBuilder
+			.setTitle(R.string.addTourDialogTitle)
+					.setCancelable(false)
+					.setPositiveButton(R.string.addTourButtonOk,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									// result.setText(userInput.getText());
+									Toast.makeText(
+											getBaseContext(),
+											"Added New TourID "
+													+ db.addTours(new Tour("VehicleNo-1234", "Quarter",
+															"Office", 6)), Toast.LENGTH_SHORT).show();
+								}
+							})
+					.setNegativeButton("Cancel",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									dialog.cancel();
+								}
+							});
+			AlertDialog alertDialog = alertDialogBuilder.create();
+			alertDialog.show();
 			return true;
 		case R.id.menu_Backup:
 			Toast.makeText(this, "Tours: " + db.getToursCount(),
