@@ -15,11 +15,16 @@ public class Tour {
 	public Tour(int TourID, String VehicleNo, String Source,
 			String Destination, int Distance, String Remarks) {
 		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Tour(String VehicleNo, String Source, String Destination,
 			int Distance, String Remarks) {
-		// TODO Auto-generated constructor stub
+		this.setVehicleNo(VehicleNo);
+		this.setSource(Source);
+		this.setDestination(Destination);
+		this.setDistance(Distance);
+		this.setRemarks(Remarks);
 	}
 
 	public Tour(int TourID, String VehicleNo, String Source,
@@ -29,7 +34,10 @@ public class Tour {
 
 	public Tour(String VehicleNo, String Source, String Destination,
 			int Distance) {
-		// TODO Auto-generated constructor stub
+		this.setVehicleNo(VehicleNo);
+		this.setSource(Source);
+		this.setDestination(Destination);
+		this.setDistance(Distance);
 	}
 
 	public long getTourID() {
@@ -82,9 +90,9 @@ public class Tour {
 
 	@Override
 	public String toString() {
-		return "Tour [TourID=" + getTourID() + ", VehicleNo=" + getVehicleNo()
-				+ ", Source=" + getSource() + ", Destination="
-				+ getDestination() + ", Remarks=" + getRemarks()
-				+ ", Distance=" + getDistance() + "]";
+		return "Tour-" + getTourID() + "," + getVehicleNo()
+				+ "," + getSource() + ","
+				+ getDestination() + "," + getRemarks()
+				+ "," + getDistance();
 	}
 }

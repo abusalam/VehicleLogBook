@@ -63,8 +63,14 @@ public class VehicleLogBook extends Activity {
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 					this);
 			alertDialogBuilder.setView(promptsView);
-			// final EditText userInput = (EditText) promptsView
-			// .findViewById(R.id.editTextSource);
+			 final EditText userInputVehicleNo = (EditText) promptsView
+			 .findViewById(R.id.editTextVehicleNo);
+			 final EditText userInputSource = (EditText) promptsView
+					 .findViewById(R.id.editTextSource);
+			 final EditText userInputDestination = (EditText) promptsView
+					 .findViewById(R.id.editTextDestination);
+			 final EditText userInputDistance = (EditText) promptsView
+					 .findViewById(R.id.editTextDistance);
 			alertDialogBuilder
 			.setTitle(R.string.addTourDialogTitle)
 					.setCancelable(false)
@@ -76,8 +82,9 @@ public class VehicleLogBook extends Activity {
 									Toast.makeText(
 											getBaseContext(),
 											"Added New TourID "
-													+ db.addTours(new Tour("VehicleNo-1234", "Quarter",
-															"Office", 6)), Toast.LENGTH_SHORT).show();
+													+ db.addTours(new Tour(userInputVehicleNo.getText().toString(), userInputSource.getText().toString(),
+															userInputDestination.getText().toString(), Integer.parseInt(userInputDistance.getText().toString()))), Toast.LENGTH_SHORT).show();
+									showAllTours();
 								}
 							})
 					.setNegativeButton("Cancel",
